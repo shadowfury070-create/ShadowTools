@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ShadowTools: ferramentas gratuitas para gamers, Free Fire, Minecraft e Pixelmon.">
+<title>ShadowTools | Ferramentas Gamer</title>
+<style>
+:root{--bg:#07070b;--card:#11111a;--card2:#171722;--text:#f5f5f7;--muted:#a5a5b5;--accent:#7c3cff;--accent2:#00d4ff;--line:#252535}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#17112c 0,#07070b 42%);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1100px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;z-index:10;background:#07070bdd;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:66px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;font-size:21px;letter-spacing:.5px}.logo span{color:var(--accent2)}nav{display:flex;gap:18px;color:var(--muted);font-size:14px}nav a:hover{color:white}
+.hero{padding:72px 0 45px;text-align:center}.badge{display:inline-block;padding:7px 12px;border:1px solid #3b2866;border-radius:999px;color:#cbb7ff;background:#150d2b;font-size:12px}.hero h1{font-size:clamp(38px,8vw,72px);line-height:.98;margin:18px auto;max-width:850px}.grad{background:linear-gradient(90deg,#fff,#a98aff,#4de8ff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:650px;margin:0 auto 26px;color:var(--muted);font-size:17px;line-height:1.6}
+.search{display:flex;max-width:650px;margin:auto;gap:10px}.search input{flex:1;padding:15px 17px;border-radius:13px;border:1px solid var(--line);background:#0d0d14;color:white;outline:none}.btn{border:0;border-radius:13px;padding:14px 18px;font-weight:800;cursor:pointer;background:linear-gradient(135deg,var(--accent),#4f8cff);color:white}
+section{padding:30px 0}.title{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}.title h2{margin:0;font-size:25px}.title span{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:linear-gradient(145deg,#12121b,#0d0d13);border:1px solid var(--line);border-radius:18px;padding:20px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#47336d}.icon{font-size:27px}.card h3{margin:12px 0 7px}.card p{color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 16px}.link{color:#9edfff;font-weight:700;font-size:13px}
+.tool{display:none;background:#0d0d14;border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:15px}.tool.active{display:block}.tool h3{margin-top:0}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{margin:8px 0}.field label{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}.field input,.field select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#14141d;color:white}.result{margin-top:15px;padding:14px;border-radius:12px;background:#151522;border:1px solid #2d2d42;color:#ddd}
+.ad{min-height:90px;border:1px dashed #36364b;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#77778a;font-size:12px;margin:24px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 0;color:#858595;font-size:13px}
+@media(max-width:760px){nav{display:none}.grid{grid-template-columns:1fr 1fr}.hero{padding-top:52px}.row{grid-template-columns:1fr}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.search{flex-direction:column}.search .btn{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="#">SHADOW<span>TOOLS</span></a><nav><a href="#ferramentas">Ferramentas</a><a href="#guias">Guias</a><a href="#sobre">Sobre</a></nav></div></header>
+
+<main class="wrap">
+<section class="hero">
+<span class="badge">⚡ GRATUITO • GAMER • MOBILE</span>
+<h1>Ferramentas que deixam seu jogo <span class="grad">mais fácil.</span></h1>
+<p>Calculadoras, geradores e guias para Free Fire, Minecraft, Pixelmon e outros games. Tudo em um só lugar.</p>
+<div class="search"><input id="search" placeholder="O que você procura? Ex.: sensibilidade, nome..."><button class="btn" onclick="buscar()">Buscar</button></div>
+</section>
+
+<div class="ad">ESPAÇO PARA GOOGLE ADSENSE</div>
+
+<section id="ferramentas">
+<div class="title"><h2>🔥 Ferramentas populares</h2><span>Comece por aqui</span></div>
+<div class="grid">
+<div class="card"><div class="icon">🎯</div><h3>Sensibilidade Free Fire</h3><p>Gere uma configuração inicial de sensibilidade para seu celular.</p><a class="link" href="#tool-sensi" onclick="showTool('tool-sensi')">Abrir ferramenta →</a></div>
+<div class="card"><div class="icon">👤</div><h3>Gerador de nomes</h3><p>Crie nomes estilosos para Free Fire, Minecraft e outros jogos.</p><a class="link" href="#tool-nome" onclick="showTool('tool-nome')">Gerar nome →</a></div>
+<div class="card"><div class="icon">⚔️</div><h3>Build Pokémon</h3><p>Monte uma base de natureza, EVs, item e golpes para seu Pokémon.</p><a class="link" href="#tool-build" onclick="showTool('tool-build')">Montar build →</a></div>
+<div class="card"><div class="icon">⛏️</div><h3>Ferramentas Minecraft</h3><p>Área preparada para calculadoras e utilidades de Minecraft.</p><a class="link" href="#guias">Ver ferramentas →</a></div>
+<div class="card"><div class="icon">💎</div><h3>Ofertas Gamer</h3><p>Espaço para futuras recomendações e links de afiliados.</p><a class="link" href="#sobre">Saiba mais →</a></div>
+<div class="card"><div class="icon">📚</div><h3>Guias</h3><p>Conteúdo pensado para atrair buscas e visitantes recorrentes.</p><a class="link" href="#guias">Ler guias →</a></div>
+</div>
+
+<div id="tool-sensi" class="tool">
+<h3>🎯 Gerador de sensibilidade</h3><div class="row">
+<div class="field"><label>Celular</label><input id="phone" placeholder="Ex.: Realme Note 70"></div>
+<div class="field"><label>Estilo</label><select id="style"><option>Equilibrado</option><option>Capa / agressivo</option><option>Precisão</option></select></div>
+</div><button class="btn" onclick="sensi()">Gerar configuração</button><div id="sensiResult" class="result">Preencha os dados e gere uma configuração.</div>
+</div>
+
+<div id="tool-nome" class="tool">
+<h3>👤 Gerador de nomes</h3><div class="row">
+<div class="field"><label>Tema</label><select id="theme"><option>Dark</option><option>Fogo</option><option>Gelo</option><option>Pro</option></select></div>
+<div class="field"><label>Palavra base (opcional)</label><input id="base" placeholder="Ex.: Shadow"></div>
+</div><button class="btn" onclick="nome()">Gerar nomes</button><div id="nameResult" class="result"></div>
+</div>
+
+<div id="tool-build" class="tool">
+<h3>⚔️ Build Pokémon</h3><div class="row">
+<div class="field"><label>Pokémon</label><select id="poke"><option>Greninja</option><option>Gengar</option><option>Lucario</option><option>Yveltal</option><option>Lunala</option></select></div>
+<div class="field"><label>Função</label><select id="role"><option>Atacante</option><option>Velocidade</option><option>Especial</option></select></div>
+</div><button class="btn" onclick="build()">Gerar base</button><div id="buildResult" class="result"></div>
+</div>
+</section>
+
+<section id="guias"><div class="title"><h2>📚 Conteúdo</h2><span>Novos artigos podem ser adicionados</span></div>
+<div class="grid">
+<div class="card"><h3>Melhor sensibilidade para capa</h3><p>Guia completo para ajustar a mira no celular.</p><span class="link">Em breve</span></div>
+<div class="card"><h3>EVs e naturezas no Pixelmon</h3><p>Entenda como montar Pokémon mais fortes.</p><span class="link">Em breve</span></div>
+<div class="card"><h3>Como escolher periféricos gamer</h3><p>Comparativos e recomendações para diferentes orçamentos.</p><span class="link">Em breve</span></div>
+</div></section>
+
+<section id="sobre"><div class="card"><h2>Sobre o ShadowTools</h2><p>Projeto independente criado para reunir ferramentas gratuitas e conteúdo útil para gamers. A monetização pode ser feita com publicidade e links de afiliados, sempre deixando claro quando houver parceria.</p></div></section>
+</main>
+
+<footer><div class="wrap">© 2026 ShadowTools • Ferramentas gratuitas para gamers</div></footer>
+<script>
+function showTool(id){document.querySelectorAll('.tool').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');}
+function buscar(){let q=document.getElementById('search').value.toLowerCase(); if(q.includes('sens'))showTool('tool-sensi');else if(q.includes('nome'))showTool('tool-nome');else if(q.includes('pokemon')||q.includes('build')||q.includes('pixel'))showTool('tool-build');else alert('Ainda não temos essa ferramenta. Salve esta ideia para a próxima atualização!');}
+function sensi(){let s=document.getElementById('style').value;let base=s==='Capa / agressivo'?[190,185,175,165,150,95]:s==='Precisão'?[150,145,135,125,110,80]:[175,170,160,150,135,90];document.getElementById('sensiResult').innerHTML='<b>Configuração sugerida</b><br>Geral: '+base[0]+' • Ponto vermelho: '+base[1]+' • Mira 2x: '+base[2]+' • Mira 4x: '+base[3]+' • AWM: '+base[4]+' • Olhadinha: '+base[5]+'<br><small>Use como ponto de partida e ajuste conforme seu aparelho.</small>'}
+function nome(){let b=document.getElementById('base').value.trim();let t=document.getElementById('theme').value;let a={Dark:['Void','Shadow','Night','Phantom','Fury'],Fogo:['Blaze','Inferno','Flame','Burn','Rage'],Gelo:['Frost','Ice','Glacier','Cryo','Zero'],Pro:['Prime','Elite','Vex','Nexus','Apex']}[t];let out=a.map((x,i)=>(b?b+x:x)+['','X','亗','ツ','々'][i]).join(' • ');document.getElementById('nameResult').textContent=out}
+function build(){let p=document.getElementById('poke').value;let data={Greninja:['Natura: Timid','EVs: 252 SpA / 252 Spe / 4 HP','Item: Life Orb'],Gengar:['Natura: Timid','EVs: 252 SpA / 252 Spe / 4 HP','Item: Choice Specs'],Lucario:['Natura: Jolly','EVs: 252 Atk / 252 Spe / 4 HP','Item: Life Orb'],Yveltal:['Natura: Timid','EVs: 252 SpA / 252 Spe / 4 HP','Item: Heavy-Duty Boots'],Lunala:['Natura: Timid','EVs: 252 SpA / 252 Spe / 4 HP','Item: Choice Specs']}[p];document.getElementById('buildResult').innerHTML='<b>'+p+'</b><br>'+data.join('<br>')+'<br><small>Os valores podem variar conforme o formato e regras do servidor.</small>'}
+</script>
+</body>
+</html>
